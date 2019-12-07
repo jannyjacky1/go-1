@@ -9,7 +9,7 @@ func TestUnpackString(t *testing.T) {
 
 	testStrings := []string{"a", "a5", "5a", "m24y40string90"}
 	testStringsExpectedResults := []string{"a", "aaaaa", "", "mmmmmmmmmmmmmmmmmmmmmmmmyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyystringgggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg"}
-	testStringsExpectedErrors := []error{nil, nil, errors.New(""), nil}
+	testStringsExpectedErrors := []error{nil, nil, errors.New("incorrect string"), nil}
 
 	for i, str := range testStrings {
 		resStr, resErr := UnpackString(str)
