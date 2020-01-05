@@ -4,6 +4,7 @@ import (
 	hw1 "github.com/jannyjacky1/go-1/hw-1"
 	hw2 "github.com/jannyjacky1/go-1/hw-2"
 	hw6 "github.com/jannyjacky1/go-1/hw-6"
+	hw8 "github.com/jannyjacky1/go-1/hw-8"
 	"log"
 )
 
@@ -19,11 +20,13 @@ func runHomework(num int) {
 		println(str)
 	case 6:
 		hw6.Check()
+	case 8:
+		hw8.Check()
 	default:
 		log.Fatalf("Некорректный номер ДЗ: %d", num)
 	}
 }
 
 func main() {
-	runHomework(2)
+	runHomework(8)
 }
