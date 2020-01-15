@@ -14,7 +14,7 @@ func runTask(ch chan error, t func() error) {
 
 func TaskDoer(tasks []func() error, n int, errMax int) {
 	tasksCnt := len(tasks)
-	ch := make(chan error, tasksCnt)
+	ch := make(chan error, n)
 	runningTasksCnt := 0
 	doneTasksCnt := 0
 	errorsCnt := 0
