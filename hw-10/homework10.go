@@ -20,11 +20,14 @@ func Copy(from string, to string, limit int, offset int) error {
 	if err != nil {
 		return err
 	}
+	defer source.Close()
 
 	target, err := os.OpenFile(to, os.O_CREATE|os.O_WRONLY|os.O_TRUNC, 0644)
 	if err != nil {
 		return err
 	}
+	defer target.Close()
+
 	source.Seek(int64(offset), io.SeekStart)
 
 	if limit > 0 {
